@@ -1,26 +1,21 @@
-import { headers as getHeaders } from 'next/headers.js'
-import Image from 'next/image'
+// app/blog/page.tsx
 import { getPayload } from 'payload'
-import React from 'react'
-import { fileURLToPath } from 'url'
-
-import config from '@/payload.config'
-import './styles.css'
+import config from '@payload-config'
 import Link from 'next/link'
+import Image from 'next/image'
 
-export default async function HomePage() {
-   const payload = await getPayload({ config })
+export default async function BlogPage() {
+  const payload = await getPayload({ config })
 
   const { docs: posts } = await payload.find({
     collection: 'blogs',
-    limit: 5,
     sort: '-createdAt', 
     depth: 1,
   })
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-10">
-      <h1 className="text-4xl font-bold mb-8">Latest Posts</h1>
+      <h1 className="text-4xl font-bold mb-8">All Posts</h1>
 
       <div className="flex flex-col gap-6">
         {posts.map((post) => (
@@ -59,4 +54,5 @@ export default async function HomePage() {
         ))}
       </div>
     </main>
-  )}
+  )
+}
