@@ -4,7 +4,8 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
-
+import { cloudStoragePlugin } from '@payloadcms/plugin-cloud-storage' // ✅ added
+import { cloudinaryAdapter } from './lib/cloudinaryAdapter' 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import Blogs from './collections/Blogs'
@@ -34,5 +35,22 @@ export default buildConfig({
     url: process.env.DATABASE_URL || '',
   }),
   sharp,
-  plugins: [],
+  plugins: [
+    cloudStoragePlugin({                       
+      collections: {
+        media: {
+          adapter: cloudinaryAdapter({
+            folder: 'my-project',
+            config: {
+              cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+              api_key: process.env.CLOUDINARY_API_KEY,
+              api_secret: process.env.CLOUDINARY_API_SECRET,
+            },
+          }),
+          disableLocalStorage: true,
+          disablePayloadAccessControl: true,
+        },
+      },
+    }),
+  ],
 })

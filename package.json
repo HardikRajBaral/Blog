@@ -20,14 +20,16 @@
   "dependencies": {
     "@payloadcms/db-mongodb": "3.79.1",
     "@payloadcms/next": "3.79.1",
+    "@payloadcms/plugin-cloud-storage": "^3.80.0",
     "@payloadcms/richtext-lexical": "3.79.1",
     "@payloadcms/ui": "3.79.1",
+    "cloudinary": "^2.9.0",
     "cross-env": "^7.0.3",
     "dotenv": "16.4.7",
     "graphql": "^16.8.1",
     "mongoose": "^9.3.2",
     "next": "15.4.11",
-    "payload": "3.79.1",
+    "payload": "latest",
     "react": "19.2.1",
     "react-dom": "19.2.1",
     "sharp": "0.34.2"
