@@ -18,7 +18,6 @@ export default function SortFilter() {
   const ref = useRef<HTMLDivElement>(null)
 
   const current = searchParams.get('sort') ?? 'newest'
-  const currentLabel = options.find(o => o.value === current)?.label ?? 'Newest first'
 
   const select = (value: string) => {
     const params = new URLSearchParams(searchParams.toString())

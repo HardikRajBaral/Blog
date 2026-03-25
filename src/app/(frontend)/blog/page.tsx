@@ -9,7 +9,7 @@ export const dynamic = 'force-dynamic'
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams: { sort?: string; search?: string }
+  searchParams: Promise<{ sort?: string; search?: string }>
 }) {
   const payload = await getPayload({ config })
   const { sort: sortParam, search: searchParam } = await searchParams

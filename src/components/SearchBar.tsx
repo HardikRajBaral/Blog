@@ -21,7 +21,7 @@ export default function SearchBar() {
     }, 400) // debounce — waits 400ms after user stops typing
 
     return () => clearTimeout(delay)
-  }, [value])
+  }, [value, router ,searchParams])
 
   return (
     <div className="relative w-full max-w-md">

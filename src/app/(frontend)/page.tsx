@@ -9,7 +9,7 @@ import SortFilter from '@/components/SortFilter'
 import Pagination from '@/components/Pagination'
 export const dynamic = 'force-dynamic'
 
-export default async function HomePage({searchParams}:{searchParams:{sort?:string,search?:string,page?:string}}) {
+export default async function HomePage({searchParams}:{searchParams:Promise<{sort?:string,search?:string,page?:string}>}) {
   
   const payload = await getPayload({ config })
   const {sort:sortParam,search:searchParam,page:pageParam}=await searchParams
