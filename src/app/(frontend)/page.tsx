@@ -19,7 +19,7 @@ export default async function HomePage() {
   return (
     <main className="max-w-8xl mx-auto px-6 md:px-12 lg:px-16 py-16">  {/* 👈 added this */}
       
-      <h1 className="text-5xl font-bold mb-12 text-center">Latest Posts</h1>
+      <h1 className="text-5xl font-bold mb-12 text-left">Latest Posts</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (

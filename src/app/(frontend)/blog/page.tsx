@@ -17,7 +17,7 @@ export default async function BlogPage() {
     <main className="max-w-8xl mx-auto px-6 md:px-12 lg:px-16 py-16">
       
       {/* Heading */}
-      <h1 className="text-5xl font-bold mb-12 text-center">All Posts</h1>
+      <h1 className="text-5xl font-bold mb-12 text-left">All Posts</h1>
 
       {/* Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
