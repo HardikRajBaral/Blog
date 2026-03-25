@@ -3,11 +3,20 @@ import { withPayload } from '@payloadcms/next/withPayload'
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Your Next.js config here
-  experimental: {
+    experimental: {
     serverActions: {
-      bodySizeLimit: '10mb', // ✅ added
-    },
+      bodySizeLimit: '10mb', 
+    }
   },
+    images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
+    ],
+  },
+  
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],
